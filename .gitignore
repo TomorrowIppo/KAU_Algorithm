@@ -1,0 +1,16 @@
+# 빌드 결과물
+/build/
+
+# VSCode 개인 설정 제외
+.vscode/
+
+# Mac 시스템 파일 무시
+.DS_Store
+
+# Windows 시스템 파일 무시
+Thumbs.db
+desktop.ini
+
+# 실행 파일 무시 (macOS, Linux)
+*.out
+*.exe
