@@ -12,6 +12,9 @@
   - C/C++ (Microsoft)  
   - Code Runner (선택)  
   - Java Extension Pack
+  - Competitive Programming Helper (선택)
+    - `.test` 파일을 자동으로 생성하며, Git에는 포함되지 않도록 `.gitignore` 설정 필요
+    - `.cph` 파일은 캐시용으로 자동 생성되며, 위치 변경은 불가능
 
 ---
 
@@ -33,7 +36,7 @@
 ## 📌 Git 관리
 
 - `.vscode/` 폴더는 `.gitignore`에 포함되어 있으므로, **각자 로컬에서 설정** 필요
-- `/build/` 폴더도 Git에 포함되지 않음
+- C++과 Java 각각의 빌드를 저장하는 `/build/` 폴더와 `/bin/` 폴더도 Git에 포함되지 않음
 
 ---
 

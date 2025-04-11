@@ -3,6 +3,10 @@
 /bin/
 *.class
 
+# CPH 생성 파일 제외
+/testcases/
+**/*.cph
+
 # VSCode 개인 설정 제외
 .vscode/
 
