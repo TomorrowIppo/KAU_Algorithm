@@ -55,6 +55,7 @@ void solve() {
         }
         if(!flag) break;
 
+        if(DEBUG) print_board();
         puyo_down();
         pop_cnt++;
         if(DEBUG) {
