@@ -8,8 +8,7 @@ constexpr int MAX = 20001;
 constexpr int INF = 987654321;
 
 int V, E, st;
-vector<pair<int, int>> graph[MAX];  // { Vertex, Weight }
-bool vis[MAX];
+vector<pair<int, int>> graph[MAX];  // { Weight, Value }
 int dist[MAX];
 
 void input();
