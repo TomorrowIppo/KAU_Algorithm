@@ -11,6 +11,7 @@ constexpr int MAX = 1001;
 int N, M, st, en;
 vector<pair<int, int>> graph[MAX];  // Weight, Vertex
 int dist[MAX];
+int pre[MAX];
 
 void input();
 void solve();
@@ -61,14 +62,29 @@ void solve()
 
             dist[nxt.V] = dist[cur.V] + nxt.W;
             pq.push({dist[nxt.V], nxt.V});
+            pre[nxt.V] = cur.V;
         }
     }
-
-    for(int i = 1; i <= N; i++)
+    cout << dist[en] << ENDL;
+    
+    vector<int> path;
+    int cur = en;
+    while(cur != st) 
     {
-        cout << "Vertex : " << i << ", min_dist : ";
-
-        if(dist[i] == INF) cout << "INF" << ENDL;
-        else cout << dist[i] << ENDL;
+        path.push_back(cur);
+        cur = pre[cur];
     }
+    path.push_back(cur);
+    reverse(path.begin(), path.end());
+
+    cout << path.size() << ENDL;
+    for(auto cur : path) cout << cur << ' ';
+    cout << ENDL;
+    // for(int i = 1; i <= N; i++)
+    // {
+    //     cout << "Vertex : " << i << ", min_dist : ";
+
+    //     if(dist[i] == INF) cout << "INF" << ENDL;
+    //     else cout << dist[i] << ENDL;
+    // }
 }
