@@ -4,7 +4,7 @@
 
 using namespace std;
 
-constexpr int MAX = 10001;
+constexpr int MAX = 50001;
 constexpr int INF = 987654321;
 
 int V, E, st;
@@ -28,18 +28,16 @@ int main()
 void input() 
 {
     // input & init dist
-    cin >> E >> V;
+    cin >> V >> E;
+    st = 1;
     fill(dist, dist + V + 1, INF);
-
-    for(int i = 0; i <= V - 1; i++)
-        graph[i].push_back({1, i + 1});
     
     while(E--) 
     {
         int u, v, w;
         cin >> u >> v >> w;
         graph[u].push_back({w, v});
-        st = min(st, u);
+        graph[v].push_back({w, u});
     }
 }
 
@@ -48,7 +46,7 @@ void solve()
     priority_queue<pair<int, int>,
                    vector<pair<int, int>>,
                    greater<pair<int, int>>> pq;
-    dist[0] = 0;
+    dist[st] = 0;
     pq.push({dist[st], st});
     while(!pq.empty())
     {
